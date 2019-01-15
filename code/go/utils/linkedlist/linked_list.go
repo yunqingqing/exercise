@@ -1,5 +1,7 @@
 package linkedlist
 
+import "fmt"
+
 type Node struct {
 	next *Node
 	data interface{}
@@ -8,6 +10,34 @@ type Node struct {
 type List struct {
 	head *Node
 	tail *Node
+}
+
+func (n *Node) GetData() interface{} {
+	return n.data
+}
+
+func (n *Node) GetNext() *Node {
+	return n.next
+}
+
+func (n *Node) SetNext(node *Node) {
+	n.next = node
+}
+
+func NewLinkedList() List {
+	return List{}
+}
+
+func (l *List) SetHead(n *Node) {
+	l.head = n
+}
+
+func (l *List) SetTail(n *Node) {
+	l.tail = n
+}
+
+func (l *List) GetHead() *Node {
+	return l.head
 }
 
 func (l *List) Append(value interface{}) {
@@ -50,6 +80,14 @@ func (l *List) Len() int {
 		current = current.next
 	}
 	return len
+}
+
+func (l *List) PrintList() {
+	currentNode := l.GetHead()
+	for currentNode != nil {
+		fmt.Printf("%+v->",currentNode.GetData())
+		currentNode = currentNode.GetNext()
+	}
 }
 
 func (l *List) Delete(value interface{}) {

@@ -78,8 +78,6 @@ class LinkedList(object):
 
         current.set_next(node)
 
-    def reverse(self):
-        
 
 if __name__ == "__main__":
     ll = LinkedList()
