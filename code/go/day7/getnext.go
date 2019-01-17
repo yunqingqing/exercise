@@ -15,7 +15,7 @@ func GetNext(node *Node) *Node {
 		return nil
 	}
 	var next *Node
-	if node.right != nil {
+	if node.right != nil {  // 有右子树，直接找右子树的最左节点
 		next = node.right
 		for next.left != nil {
 			next = next.left
@@ -78,6 +78,7 @@ func main() {
 	fmt.Printf("inorders=%+v\n", inorder(root, []int{}))
 	fmt.Printf("1 next was %+v\n", GetNext(nodes[0]))
 	fmt.Printf("2 next was %+v\n", GetNext(nodes[1]))
+	fmt.Printf("3 next was %+v\n", GetNext(nodes[2]))
 	fmt.Printf("9 next was %+v\n", GetNext(nodes[8]))
 	fmt.Printf("7 next was %+v\n", GetNext(nodes[6]))
 	fmt.Printf("inorders=%+v\n", inorder(root, []int{}))
