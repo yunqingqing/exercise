@@ -1,6 +1,6 @@
 # 每日练习
 
-题目来源于剑指offer,leetcode
+题目来源于剑指offer,leetcode.目前主要使用golang实现题目算法
 
 - [day1 算法 替换字符串中空格](https://github.com/yunqingqing/exercise/blob/master/paper/1.md)
 - [day2 设计模式 单例模式](https://github.com/yunqingqing/exercise/blob/master/paper/2.md)
