@@ -6,10 +6,7 @@ func HasPath(matrix string, rows, cols int, str string) bool {
 		return false
 	}
 
-	visited := []bool{}
-	for i := 0; i < rows * cols; i++ {
-		visited = append(visited, false)
-	}
+	visited := make([]bool, rows * cols)
 	
 	pathLength := 0
 

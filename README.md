@@ -14,3 +14,4 @@
 - [day10 算法 矩阵中的路径](https://github.com/yunqingqing/exercise/blob/master/paper/10.md)
 - [day11 算法 机器人的运动范围](https://github.com/yunqingqing/exercise/blob/master/paper/11.md)
 - [day12 算法 二进制中1的个数](https://github.com/yunqingqing/exercise/blob/master/paper/12.md)
+- [day13 算法 动态规划和贪婪算法](https://github.com/yunqingqing/exercise/blob/master/paper/13.md)
