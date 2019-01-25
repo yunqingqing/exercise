@@ -2,7 +2,7 @@ package day13
 
 import "math"
 
-// 动态规划
+// 动态规划, 把切成m的任务分成两段两段.
 func MaxProductAfterCyttingSolution1(length int) int {
 	if length < 2 {
 		return 0
@@ -21,6 +21,8 @@ func MaxProductAfterCyttingSolution1(length int) int {
 	products[3] = 3
 
 	max := 0
+
+	// 算出f(i)的最优解
 	for i := 4; i <= length; i++ {
 		max = 0
 		for j := 1; j <= i / 2; j++ {
