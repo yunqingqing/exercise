@@ -16,6 +16,10 @@ func (n *Node) GetData() interface{} {
 	return n.data
 }
 
+func (n *Node) SetData(data interface{}) {
+	n.data = data
+}
+
 func (n *Node) GetNext() *Node {
 	return n.next
 }
@@ -40,7 +44,11 @@ func (l *List) GetHead() *Node {
 	return l.head
 }
 
-func (l *List) Append(value interface{}) {
+func (l *List) GetTail() *Node {
+	return l.tail
+}
+
+func (l *List) Append(value interface{}) *Node{
 	node := &Node{
 		data: value,
 	}
@@ -51,6 +59,7 @@ func (l *List) Append(value interface{}) {
 		l.head = node
 		l.tail = node
 	}
+	return node
 }
 
 func (l *List) Push(value interface{}) {
