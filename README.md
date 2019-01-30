@@ -17,3 +17,5 @@
 - [day13 算法 动态规划和贪婪算法](https://github.com/yunqingqing/exercise/blob/master/paper/13.md)
 - [day14 算法 数值的整数次方](https://github.com/yunqingqing/exercise/blob/master/paper/14.md)
 - [day15 算法 打印从一到最大的n位数](https://github.com/yunqingqing/exercise/blob/master/paper/15.md)
+- [day16 算法 O(1)内删除链表中给定的节点](https://github.com/yunqingqing/exercise/blob/master/paper/16.md)
+- [day17 算法 删除排序链表中所有重复的节点](https://github.com/yunqingqing/exercise/blob/master/paper/16.md)

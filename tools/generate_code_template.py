@@ -4,7 +4,7 @@ import os
 import argparse
 
 cur_dir_path = os.path.dirname(os.path.realpath(__file__))
-base_code_path = os.path.join(cur_dir_path.rsplit("/", 1)[0], 'code')
+base_code_path = os.path.join(cur_dir_path.rsplit(os.sep, 1)[0], 'code')
 
 
 def touch(path):
