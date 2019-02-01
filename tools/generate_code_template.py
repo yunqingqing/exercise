@@ -7,9 +7,11 @@ cur_dir_path = os.path.dirname(os.path.realpath(__file__))
 base_code_path = os.path.join(cur_dir_path.rsplit(os.sep, 1)[0], 'code')
 
 
-def touch(path):
-    with open(path, 'a'):
+def touch(path, content=None):
+    with open(path, 'a') as f:
         os.utime(path, None)
+        if content:
+            f.write(content)
 
 
 def mkdir(path):
@@ -30,13 +32,27 @@ def gen_go(base_path, name):
     mkdir(dir_path)
     main_file = os.path.join(dir_path, "{}.go".format(name))
     test_file = os.path.join(dir_path, "{}_test.go".format(name))
-    touch(main_file)
-    touch(test_file)
+    touch(main_file, content=code_template['go'].format(name))
+    touch(test_file, content=code_template['go_test'] % name)
 
-
+# language_type => generator
 lang_hanler_map = {
     "go": gen_go
-}  # language_type => generator
+}
+
+# golang test file code template.
+go_test_template = '''package %s
+
+import "testing"
+
+func TestFuc(t *testing.T) {
+
+}'''
+
+code_template = {
+    "go": "package {}",
+    "go_test": go_test_template
+}
 
 
 if __name__ == '__main__':

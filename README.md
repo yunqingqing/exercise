@@ -19,3 +19,5 @@
 - [day15 算法 打印从一到最大的n位数](https://github.com/yunqingqing/exercise/blob/master/paper/15.md)
 - [day16 算法 O(1)内删除链表中给定的节点](https://github.com/yunqingqing/exercise/blob/master/paper/16.md)
 - [day17 算法 删除排序链表中所有重复的节点](https://github.com/yunqingqing/exercise/blob/master/paper/16.md)
+- [day18 算法 正则表达式匹配](https://github.com/yunqingqing/exercise/blob/master/paper/18.md)
+- [day19 算法 表示数值的字符串](https://github.com/yunqingqing/exercise/blob/master/paper/19.md)
