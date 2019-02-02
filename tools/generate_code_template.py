@@ -45,7 +45,7 @@ go_test_template = '''package %s
 
 import "testing"
 
-func TestFuc(t *testing.T) {
+func TestFunc(t *testing.T) {
 
 }'''
 
