@@ -21,4 +21,5 @@
 - [day17 算法 删除排序链表中所有重复的节点](https://github.com/yunqingqing/exercise/blob/master/paper/16.md)
 - [day18 算法 正则表达式匹配](https://github.com/yunqingqing/exercise/blob/master/paper/18.md)
 - [day19 算法 表示数值的字符串](https://github.com/yunqingqing/exercise/blob/master/paper/19.md)
-- [day20 算法 表示数值的字符串](./paper/20.md)
+- [day20 算法 调整数组顺序使奇数位于偶数前面](./paper/20.md)
+- [day21 算法 求链表的倒数第k个节点](./paper/21.md)
