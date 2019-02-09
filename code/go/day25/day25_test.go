@@ -8,7 +8,6 @@ func connectNode(root, left, right *Node) {
 }
 
 func TestFunc1(t *testing.T) {
-	// tree 1
 	node1 := Node{
 		val: 8,
 	}
