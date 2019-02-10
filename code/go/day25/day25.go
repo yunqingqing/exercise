@@ -1,13 +1,9 @@
 package day25
 
-type Node struct {
-	val   int
-	right *Node
-	left  *Node
-}
+import "../utils/binarytree"
 
 // 判断子树结构是否一致
-func doesTree1HaveTree2(rootNode1, rootNode2 *Node) bool {
+func doesTree1HaveTree2(rootNode1, rootNode2 *binarytree.Node) bool {
 	if rootNode2 == nil {
 		return true
 	}
@@ -16,30 +12,30 @@ func doesTree1HaveTree2(rootNode1, rootNode2 *Node) bool {
 		return false
 	}
 
-	if rootNode1.val != rootNode2.val {
+	if rootNode1.Val != rootNode2.Val {
 		return false
 	}
 
-	return doesTree1HaveTree2(rootNode1.left, rootNode2.left) && doesTree1HaveTree2(rootNode1.right, rootNode2.right)
+	return doesTree1HaveTree2(rootNode1.Left, rootNode2.Left) && doesTree1HaveTree2(rootNode1.Right, rootNode2.Right)
 }
 
-func HasSubtree(rootNode1, rootNode2 *Node) bool {
+func HasSubtree(rootNode1, rootNode2 *binarytree.Node) bool {
 	result := false
 
 	if rootNode1 != nil && rootNode2 != nil {
 
 		// 根节点相同，判断下子树是否一致
-		if rootNode1.val == rootNode2.val {
+		if rootNode1.Val == rootNode2.Val {
 			result = doesTree1HaveTree2(rootNode1, rootNode2)
 		}
 
 		// 根节点不同，看子树中是否还有相同的根节点
 		if !result {
-			result = HasSubtree(rootNode1.left, rootNode2)
+			result = HasSubtree(rootNode1.Left, rootNode2)
 		}
 
 		if !result {
-			result = HasSubtree(rootNode1.right, rootNode2)
+			result = HasSubtree(rootNode1.Right, rootNode2)
 		}
 	}
 

@@ -1,23 +1,19 @@
 package day26
 
-type Node struct {
-	val   int
-	right *Node
-	left  *Node
-}
+import "../utils/binarytree"
 
-func MirrorRecursively(node *Node) {
-	if node.left == nil && node.right == nil {
+func MirrorRecursively(node *binarytree.Node) {
+	if node.Left == nil && node.Right == nil {
 		return
 	}
 
-	node.left, node.right = node.right, node.left
+	node.Left, node.Right = node.Right, node.Left
 
-	if node.left != nil {
-		MirrorRecursively(node.left)
+	if node.Left != nil {
+		MirrorRecursively(node.Left)
 	}
 
-	if node.right != nil {
-		MirrorRecursively(node.right)
+	if node.Right != nil {
+		MirrorRecursively(node.Right)
 	}
 }
