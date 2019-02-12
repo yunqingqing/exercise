@@ -1,5 +1,7 @@
 package day18
 
+import "fmt"
+
 func Math(str, pattern string) bool {
 	pStr := 0
 	pPattern := 0
@@ -7,23 +9,45 @@ func Math(str, pattern string) bool {
 }
 
 func matchCore(str, pattern string, pStr, pPattern, strLen, patternLen int) bool {
-	if strLen == pStr && pPattern >= patternLen{
+	if strLen == pStr && pPattern == patternLen{
 		return true
 	}
 
-	if strLen != strLen && pPattern >= patternLen {
+	if pStr != strLen && pPattern > patternLen {
 		return false
 	}
 
-	if string(pattern[pPattern+1]) == "*" {
-		if string(pattern[pPattern]) == string(str[pStr]) {
-			return matchCore(str, pattern, pStr+1, pPattern+2, strLen, patternLen) || matchCore(str, pattern, pStr+1, pPattern, strLen, patternLen) || matchCore(str, pattern, pStr, pPattern+2, strLen, patternLen)
+	// 防止array越界，单独判断取值
+	var patternChar, strChar string
+	if pPattern >= patternLen {
+		patternChar = ""	
+	} else {
+		patternChar = string(pattern[pPattern])
+	}
+	if pStr >= strLen {
+		strChar = ""	
+	} else {
+		strChar = string(str[pStr])
+	}
+
+	if (pPattern + 1) < patternLen && string(pattern[pPattern+1]) == "*" {
+
+		if patternChar == strChar || (patternChar == "." && strLen != pStr) {
+			// 进入下一个状态
+			enterNext := matchCore(str, pattern, pStr+1, pPattern+2, strLen, patternLen)
+			// 留在当前状态，继续匹配*
+			stay := matchCore(str, pattern, pStr+1, pPattern, strLen, patternLen)
+			// 略过一个*号
+			ignore := matchCore(str, pattern, pStr, pPattern+2, strLen, patternLen)
+
+			return enterNext || stay || ignore
 		} else {
+			// 略过一个*号
 			return matchCore(str, pattern, pStr, pPattern+2, strLen, patternLen)
 		}
 	}
 
-	if string(pattern[pPattern]) == string(str[pStr]) && string(pattern[pPattern]) == "." && strLen != pStr {
+	if patternChar == strChar || (patternChar == "." && strLen != pStr) {
 		return matchCore(str, pattern, pStr+1, pPattern+1, strLen, patternLen)
 	}
 
