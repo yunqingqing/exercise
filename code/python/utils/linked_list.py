@@ -22,6 +22,7 @@ class Node(object):
 class LinkedList(object):
     def __init__(self):
         self.head = None
+        self.tail = None
 
     def __len__(self):
         count = 0
@@ -78,6 +79,22 @@ class LinkedList(object):
 
         current.set_next(node)
 
+    def append_node(self, node):
+        current = self.head
+        if not current:
+            self.head = node
+            return
+
+        while current.get_next():
+            current = current.get_next()
+
+        current.set_next(node)
+
+    def print(self):
+        cur = self.head
+        while cur is not None:
+            print(cur.get_data())
+            cur = cur.get_next()
 
 if __name__ == "__main__":
     ll = LinkedList()
