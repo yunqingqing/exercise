@@ -35,9 +35,17 @@ def gen_go(base_path, name):
     touch(main_file, content=code_template['go'].format(name))
     touch(test_file, content=code_template['go_test'] % name)
 
+
+def gen_py(base_path, name):
+    dir_path = os.path.join(base_path, name)
+    mkdir(dir_path)
+    main_file = os.path.join(dir_path, "{}.py".format(name))
+    touch(main_file, content=code_template['py'].format(name))
+
 # language_type => generator
 lang_hanler_map = {
-    "go": gen_go
+    "go": gen_go,
+    'python': gen_py,
 }
 
 # golang test file code template.
@@ -49,9 +57,21 @@ func TestFunc(t *testing.T) {
 
 }'''
 
+py_main_template = '''
+
+
+def func():
+    pass
+
+
+if __name__ == '__main__':
+    func()
+'''
+
 code_template = {
     "go": "package {}",
-    "go_test": go_test_template
+    "go_test": go_test_template,
+    'py': py_main_template,
 }
 
 
