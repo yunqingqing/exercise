@@ -28,6 +28,11 @@ def get_args_parser():
 
 
 def gen_go(base_path, name):
+    """ 
+    生成python
+    base_path (string): code/go/
+    name (string): 代码目录，比如day1,day2...
+    """
     dir_path = os.path.join(base_path, name)
     mkdir(dir_path)
     main_file = os.path.join(dir_path, "{}.go".format(name))
@@ -37,6 +42,11 @@ def gen_go(base_path, name):
 
 
 def gen_py(base_path, name):
+    """ 
+    生成python
+    base_path (string): code/python/
+    name (string): 代码目录，比如day1,day2...
+    """
     dir_path = os.path.join(base_path, name)
     mkdir(dir_path)
     main_file = os.path.join(dir_path, "{}.py".format(name))

@@ -17,10 +17,10 @@ def max_product_after_cut(length):
         return 2
 
     products = [0] * (length+1)
-    products[0] = 0
-    products[1] = 1
-    products[2] = 2
-    products[3] = 3
+    products[0] = 0 # 1
+    products[1] = 1 # 2
+    products[2] = 2 # 3
+    products[3] = 3 # 4
     
     # 计算f(i)的最优解
     for i in range(4, length+1):
