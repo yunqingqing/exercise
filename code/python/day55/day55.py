@@ -14,7 +14,6 @@ def max_area_of_island(grid):
         if row >= 0 and row < length_x and col >= 0 and col < length_y and grid[row][col] == 1 and not visited[row][col]:
             visited[row][col] = True
             res = _dfs(row-1, col) + _dfs(row+1, col) + _dfs(row, col-1) + _dfs(row, col+1) + 1
-            import pdb;pdb.set_trace()
             return res
         else:
             return 0
