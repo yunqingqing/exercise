@@ -29,7 +29,7 @@ def is_sub_sequence(s, t):
             return False
         st = st[st.index(i)+1:]
 
-    return True
+    return True 
 
 
 class IsSubSequenceTestCase(unittest.TestCase):
